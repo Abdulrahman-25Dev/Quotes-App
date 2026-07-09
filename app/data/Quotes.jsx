@@ -17,7 +17,7 @@ export default function QuotesPage() {
   // دالة جلب الاقتباسات
   async function fetchQuotes() {
     try {
-      const res = await fetch("http://localhost:3001/api/quotes");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/quotes`);
       const data = await res.json();
       if (data && data.length > 0) {
         setAllQuotes(data);
@@ -61,7 +61,7 @@ export default function QuotesPage() {
     }
 
     try {
-      const res = await fetch("http://localhost:3001/api/quotes", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/quotes`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
