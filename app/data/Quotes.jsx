@@ -25,7 +25,8 @@ export default function QuotesPage() {
       }
     } catch (error) {
       console.error("خطأ في جلب الاقتباسات:", error);
-    }
+   
+    }   
   }
 
   useEffect(() => {
